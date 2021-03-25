@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>Lätkä projekti. Minun joukkue</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+  </head>
+  <body>
+    <section class="allplayers">
+      <h1>
+        <span>Kaikki pelaajat</span>
+        <a href="myteam.html">Minun joukkue</a>
+      </h1>
+      <p>Tässä kaikki pelaajat, sekä vapaat että varatut (näkyvät vaaleana)</p>
+      <table class="allplayers__table">
+        <caption>Kaikki pelaajat</caption>
+        <tr>
+          <th>Pelaajan kuva</th>
+          <th>Pelaajan nimi</th>
+          <th>Rooli</th>
+          <th>Maalit</th>
+          <th>Syötöt</th>
+          <th>Laukkaukset</th>
+          <th>Blokkaukset</th>
+          <th>Tehotilasto</th>
+          <th>Yhteensä</th>
+          <th>Onko vapaa?</th>
+          <th>Varaa</th>
+        </tr>
+        <tr>
+          <td>
+            <img src="player4.jpg" width=100 height=100 alt="Player 1">
+          </td>
+          <td>Pelaaja 4</td>
+          <td>Puolustaja</td>
+          <td>3</td>
+          <td>2</td>
+          <td>3</td>
+          <td>6</td>
+          <td>1</td>
+          <td>13</td>
+          <td>kyllä</td>
+          <td>
+            <button class="reserve_btn">Varaa</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="player5.jpg" width=100 height=100 alt="Player 1">
+          </td>
+          <td>Pelaaja 5</td>
+          <td>Maalivahti</td>
+          <td>3</td>
+          <td>2</td>
+          <td>3</td>
+          <td>6</td>
+          <td>1</td>
+          <td>13</td>
+          <td>Kyllä</td>
+          <td>
+            <button class="reserve_btn">Varaa</button>
+          </td>
+        </tr>
+        <tr class="reserved">
+          <td>
+            <img src="player1.jpg" width=100 height=100 alt="Player 1">
+          </td>
+          <td>Pelaaja 1</td>
+          <td>Hyökkääjä</td>
+          <td>3</td>
+          <td>2</td>
+          <td>3</td>
+          <td>6</td>
+          <td>1</td>
+          <td>13</td>
+          <td>Ei</td>
+          <td>
+            <button class="reserve_btn">Varaa</button>
+          </td>
+        </tr>
+        <tr class="reserved">
+          <td>
+            <img src="player2.jpg" width=100 height=100 alt="Player 1">
+          </td>
+          <td>Pelaaja 2</td>
+          <td>Hyökkääjä</td>
+          <td>3</td>
+          <td>2</td>
+          <td>3</td>
+          <td>6</td>
+          <td>1</td>
+          <td>13</td>
+          <td>Ei</td>
+          <td>
+            <button class="reserve_btn">Varaa</button>
+          </td>
+        </tr>
+        <tr class="reserved">
+          <td>
+            <img src="player3.jpg" width=100 height=100 alt="Player 1">
+          </td>
+          <td>Pelaaja 3</td>
+          <td>Puolustaja</td>
+          <td>3</td>
+          <td>2</td>
+          <td>3</td>
+          <td>6</td>
+          <td>1</td>
+          <td>13</td>
+          <td>Ei</td>
+          <td>
+            <button class="reserve_btn">Varaa</button>
+          </td>
+        </tr>
+      </table>
+    </section>
+    <script src="allplayers.js"></script>
+  </body>
+</html>

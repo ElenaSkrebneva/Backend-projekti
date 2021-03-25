@@ -1,0 +1,29 @@
+body {
+  min-width: 1040px;
+  font-family: Georgia, sens-serif;
+}
+
+caption {
+  font-size: 32px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-shadow: 1px 1px #5687ac;
+  color: blue;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border-right: 1px dashed grey;
+  padding: 10px;
+}
+
+td:last-child, th:last-child {
+  border-right: none;
+}
+
+.points_together {
+  text-align: right;
+}
