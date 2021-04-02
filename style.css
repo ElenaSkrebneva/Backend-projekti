@@ -29,8 +29,8 @@
   color: black;
 }
 body {
-  min-width: 1040px;
-  font-family: Georgia, sens-serif;
+  padding: 20px;
+  font-family: Arial;
   background: #f1f1f1;
 }
 article {
@@ -62,7 +62,23 @@ td:last-child, th:last-child {
 }
 .footer {
   padding: 20px;
-  text-align: center;
+  text-align: right;
   background: #ddd;
   margin-top: 20px;
+}
+@media screen and (max-width: 400px) {
+  .topnav  {
+    float: none;
+    width: 100%;
+  }
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
 }
