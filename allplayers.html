@@ -7,12 +7,19 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="normalize.css">
   </head>
+
+  <div class="header">
+    <h1>KAIKKI PELAAJAT</h1>
+    <p>Tässä kaikki pelaajat, sekä vapaat että varatut (näkyvät vaaleana)</p>
+  </div>
+
+<div class="topnav">
+    <a href="myteam.html">Minun joukkue</a>
+    <a href="https://www.liigaporssi.fi/">Liveseuranta Liigapörssi</a>
+    </div>
+
   <body>
     <section class="allplayers">
-      <h1>
-        <span>Kaikki pelaajat</span>
-        <a href="myteam.html">Minun joukkue</a>
-      </h1>
       <p>Tässä kaikki pelaajat, sekä vapaat että varatut (näkyvät vaaleana)</p>
       <table class="allplayers__table">
         <caption>Kaikki pelaajat</caption>
@@ -117,5 +124,13 @@
       </table>
     </section>
     <script src="allplayers.js"></script>
+
+    <div class="footer">
+      <p id="demo"></p>
+      <script>
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d;
+        </script> 
+  </div>
   </body>
 </html>
