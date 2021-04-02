@@ -7,15 +7,18 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="normalize.css">
   </head>
+  <header>OMA JOUKKUEENI</header>
+  <article> Tämä on vain esimerkki siitä, pisteet on miten sattuu. Myöhemmin tehdään näin, että taukukko on tyhjä ja tietoa siihen haetaan tietokannasta.</article> 
+  <section>
+    <nav>
+      <ul>
+        <li><a href="allplayers.html">Kaikki pelaajat</a></li>
+      </ul>
+    </nav>
+    
   <body>
     <section class="myteam">
-      <h1>
-        <span>Minun joukkue</span>
-        <a href="allplayers.html">Kaikki pelaajat</a>
-      </h1>
-      <p> Tämä on minun joukkue. Tämä on vain esimerkki siitä, pisteet on miten sattuu. Myöhemmin tehdään näin, että taukukko on tyhjä ja tietoa siihen haetaan tietokannasta.</p>
       <table class="myteam__table">
-        <caption>Minun joukkue</caption>
         <tr>
           <th>Pelaajan kuva</th>
           <th>Pelaajan nimi</th>
@@ -108,14 +111,16 @@
             <button class="free_btn">Vapauta</button>
           </td>
         </tr>
+      </table>
+    </section>
+        <footer>
         <tr>
           <td class="points_together" colspan="10">
             Yhteensä pisteitä:
             <span id="pisteet">100</span>
           </td>
         </tr>
-      </table>
-    </section>
+      </footer>
     <script>
       var btnz = document.getElementsByClassName("free_btn")
       for (var i = 0; i < btnz.length; i++) {
