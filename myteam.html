@@ -4,20 +4,20 @@
     <meta charset = "utf-8">
     <title>Lätkä projekti. Minun joukkue</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/normalize.css">
   </head>
-  
+
   <div class="header">
     <h1>OMA JOUKKUEENI</h1>
     <p>Tämä on vain esimerkki siitä, pisteet on miten sattuu. Myöhemmin tehdään näin, että taukukko on tyhjä ja tietoa siihen haetaan tietokannasta.</p>
   </div>
-  
+
     <div class="topnav">
       <a href="allplayers.html">Kaikki pelaajat</a>
       <a href="https://www.liigaporssi.fi/">Liveseuranta Liigapörssi</a>
     </div>
-    
+
   <body>
     <section class="myteam">
       <div style="overflow-x:auto;">
@@ -36,7 +36,7 @@
         </tr>
         <tr>
           <td>
-            <img src="player1.jpg" width=100 height=100 alt="Player 1">
+            <img src="img/player1.jpg" width=100 height=100 alt="Player 1">
           </td>
           <td>Pelaaja 1</td>
           <td>Hyökkääjä</td>
@@ -52,7 +52,7 @@
         </tr>
         <tr>
           <td>
-            <img src="player2.jpg" width=100 height=100 alt="Player 1">
+            <img src="img/player2.jpg" width=100 height=100 alt="Player 1">
           </td>
           <td>Pelaaja 2</td>
           <td>Hyökkääjä</td>
@@ -68,7 +68,7 @@
         </tr>
         <tr>
           <td>
-            <img src="player3.jpg" width=100 height=100 alt="Player 1">
+            <img src="img/player3.jpg" width=100 height=100 alt="Player 1">
           </td>
           <td>Pelaaja 3</td>
           <td>Puolustaja</td>
@@ -84,7 +84,7 @@
         </tr>
         <tr>
           <td>
-            <img src="player4.jpg" width=100 height=100 alt="Player 1">
+            <img src="img/player4.jpg" width=100 height=100 alt="Player 1">
           </td>
           <td>Pelaaja 4</td>
           <td>Puolustaja</td>
@@ -100,7 +100,7 @@
         </tr>
         <tr>
           <td>
-            <img src="player5.jpg" width=100 height=100 alt="Player 1">
+            <img src="img/player5.jpg" width=100 height=100 alt="Player 1">
           </td>
           <td>Pelaaja 5</td>
           <td>Maalivahti</td>
@@ -117,18 +117,11 @@
       </table>
       </div>
     </section>
-    <script>
-      var btnz = document.getElementsByClassName("free_btn")
-      for (var i = 0; i < btnz.length; i++) {
-        btnz[i].addEventListener('click', function() {
-          window.alert("Olet vapauttanut pelaajan")
-        })
-      }
-    </script>
-    <div class="footer">
-        <td class="points_together" colspan="10">
-        Yhteensä pisteitä:
-        <span id="pisteet">100</span>
-    </div>
-  </body> 
-  </html>
+    <footer class="footer">
+      <td class="points_together" colspan="10">
+      Yhteensä pisteitä:
+      <span id="pisteet">100</span>
+    </footer>
+    <script src="frontend/tableAction__MyTeam.js"></script>
+  </body>
+</html>
