@@ -1,134 +1,144 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset = "utf-8">
+<head>
+    <meta charset="utf-8">
     <title>Lätkä projekti. Minun joukkue</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="stylesheet" type="text/css" href="style/normalize.css">
-  </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <div class="header">
-    <h1>KAIKKI PELAAJAT</h1>
-    <p>Tässä kaikki pelaajat, sekä vapaat että varatut (näkyvät vaaleana)</p>
-  </div>
-
-<div class="topnav">
-    <a href="myteam.html">Minun joukkue</a>
-    <a href="https://www.liigaporssi.fi/">Liveseuranta Liigapörssi</a>
+    <div style="background-image: url('img/hockey.jpg');">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <div class="header">
+            <div class="bg-text">KAIKKI PELAAJAT</div>
+            <p> </p>
+            <div class="header">
+                <h1>Valitse pelaajat omaan joukkueeseen</h1>
+            </div>
+        </div>
     </div>
+</head>
+    <div class="topnav">
+        <a class="active" href="myteam.html">
+            <i class="fa fa-fw fa-home"></i> Minun joukkue</>
+            <a href="https://www.liigaporssi.fi/"><i class="fa fa-fw fa-user"></i> Liveseuranta Liigapörssi</a>
+            <a href="https://youtu.be/2iGAIi3IUSg"><i class="fa fa-fw fa-search"></i> Youtube</a>   
+            <a href="mailto:A1702384@edu.lapinamk.fi"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    </div>
+</div>
 
-  <body>
+<body>
     <section class="allplayers">
 
-      <table class="allplayers__table">
-        <tr>
-          <th>Pelaajan kuva</th>
-          <th>Pelaajan nimi</th>
-          <th>Rooli</th>
-          <th>Maalit</th>
-          <th>Syötöt</th>
-          <th>Laukkaukset</th>
-          <th>Blokkaukset</th>
-          <th>Tehotilasto</th>
-          <th>Yhteensä</th>
-          <th>Onko vapaa?</th>
-          <th>Varaa</th>
-        </tr>
-        <tr>
-          <td>
-            <img src="img/player4.jpg" width=100 height=100 alt="Player 1">
-          </td>
-          <td>Pelaaja 4</td>
-          <td>Puolustaja</td>
-          <td>3</td>
-          <td>2</td>
-          <td>3</td>
-          <td>6</td>
-          <td>1</td>
-          <td>13</td>
-          <td>kyllä</td>
-          <td>
-            <button class="reserve_btn">Varaa</button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img src="img/player5.jpg" width=100 height=100 alt="Player 1">
-          </td>
-          <td>Pelaaja 5</td>
-          <td>Maalivahti</td>
-          <td>3</td>
-          <td>2</td>
-          <td>3</td>
-          <td>6</td>
-          <td>1</td>
-          <td>13</td>
-          <td>Kyllä</td>
-          <td>
-            <button class="reserve_btn">Varaa</button>
-          </td>
-        </tr>
-        <tr class="reserved">
-          <td>
-            <img src="img/player1.jpg" width=100 height=100 alt="Player 1">
-          </td>
-          <td>Pelaaja 1</td>
-          <td>Hyökkääjä</td>
-          <td>3</td>
-          <td>2</td>
-          <td>3</td>
-          <td>6</td>
-          <td>1</td>
-          <td>13</td>
-          <td>Ei</td>
-          <td>
-            <button class="reserve_btn">Varaa</button>
-          </td>
-        </tr>
-        <tr class="reserved">
-          <td>
-            <img src="img/player2.jpg" width=100 height=100 alt="Player 1">
-          </td>
-          <td>Pelaaja 2</td>
-          <td>Hyökkääjä</td>
-          <td>3</td>
-          <td>2</td>
-          <td>3</td>
-          <td>6</td>
-          <td>1</td>
-          <td>13</td>
-          <td>Ei</td>
-          <td>
-            <button class="reserve_btn">Varaa</button>
-          </td>
-        </tr>
-        <tr class="reserved">
-          <td>
-            <img src="img/player3.jpg" width=100 height=100 alt="Player 1">
-          </td>
-          <td>Pelaaja 3</td>
-          <td>Puolustaja</td>
-          <td>3</td>
-          <td>2</td>
-          <td>3</td>
-          <td>6</td>
-          <td>1</td>
-          <td>13</td>
-          <td>Ei</td>
-          <td>
-            <button class="reserve_btn">Varaa</button>
-          </td>
-        </tr>
-      </table>
+        <table class="allplayers__table">
+            <tr>
+                <th>Pelaajan kuva</th>
+                <th>Pelaajan nimi</th>
+                <th>Rooli</th>
+                <th>Maalit</th>
+                <th>Syötöt</th>
+                <th>Laukkaukset</th>
+                <th>Blokkaukset</th>
+                <th>Tehotilasto</th>
+                <th>Yhteensä</th>
+                <th>Onko vapaa?</th>
+                <th>Varaa</th>
+            </tr>
+            <tr>
+                <td>
+                    <img src="img/player4.jpg" width=100 height=100 alt="Player 1">
+                </td>
+                <td>Pelaaja 4</td>
+                <td>Puolustaja</td>
+                <td>3</td>
+                <td>2</td>
+                <td>3</td>
+                <td>6</td>
+                <td>1</td>
+                <td>13</td>
+                <td>kyllä</td>
+                <td>
+                    <button class="reserve_btn">Varaa</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="img/player5.jpg" width=100 height=100 alt="Player 1">
+                </td>
+                <td>Pelaaja 5</td>
+                <td>Maalivahti</td>
+                <td>3</td>
+                <td>2</td>
+                <td>3</td>
+                <td>6</td>
+                <td>1</td>
+                <td>13</td>
+                <td>Kyllä</td>
+                <td>
+                    <button class="reserve_btn">Varaa</button>
+                </td>
+            </tr>
+            <tr class="reserved">
+                <td>
+                    <img src="img/player1.jpg" width=100 height=100 alt="Player 1">
+                </td>
+                <td>Pelaaja 1</td>
+                <td>Hyökkääjä</td>
+                <td>3</td>
+                <td>2</td>
+                <td>3</td>
+                <td>6</td>
+                <td>1</td>
+                <td>13</td>
+                <td>Ei</td>
+                <td>
+                    <button class="reserve_btn">Varaa</button>
+                </td>
+            </tr>
+            <tr class="reserved">
+                <td>
+                    <img src="img/player2.jpg" width=100 height=100 alt="Player 1">
+                </td>
+                <td>Pelaaja 2</td>
+                <td>Hyökkääjä</td>
+                <td>3</td>
+                <td>2</td>
+                <td>3</td>
+                <td>6</td>
+                <td>1</td>
+                <td>13</td>
+                <td>Ei</td>
+                <td>
+                    <button class="reserve_btn">Varaa</button>
+                </td>
+            </tr>
+            <tr class="reserved">
+                <td>
+                    <img src="img/player3.jpg" width=100 height=100 alt="Player 1">
+                </td>
+                <td>Pelaaja 3</td>
+                <td>Puolustaja</td>
+                <td>3</td>
+                <td>2</td>
+                <td>3</td>
+                <td>6</td>
+                <td>1</td>
+                <td>13</td>
+                <td>Ei</td>
+                <td>
+                    <button class="reserve_btn">Varaa</button>
+                </td>
+            </tr>
+        </table>
     </section>
     <footer class="footer">
-      <p id="demo"></p>
+        <p id="demo"></p>
     </footer>
-  <script src="frontend/tableAction__AllPlayers.js"></script>
-  <script>
-    var d = new Date();
-    document.getElementById("demo").innerHTML = d;
-  </script>
-  </body>
+    <script src="frontend/tableAction__AllPlayers.js"></script>
+    <script>
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d;
+    </script>
+</body>
 </html>
