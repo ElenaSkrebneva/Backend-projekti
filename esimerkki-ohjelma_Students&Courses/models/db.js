@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const address = 'mongodb://localhost:27017/mydatabase'
+const address = 'mongodb://localhost:27017/project2'
 mongoose.set('useNewUrlParser', true)
 mongoose.set('useUnifiedTopology', true)
 mongoose.connect(address)
