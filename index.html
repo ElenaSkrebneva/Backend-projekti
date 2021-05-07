@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Lätkä projekti</title>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="style/style.css">
+      <link rel="stylesheet" type="text/css" href="style/normalize.css">
+      <script src="frontend/changeTag.js"></script>
+      <script src="frontend/manage_players.js"></script>
+  </head>
+  <body>
+    <main>
+      <nav class="topnav">
+        <ul>
+            <li>
+                <a href="/#/myteam">Minun joukkue</a>
+            </li>
+            <li>
+                <a href="/#/allplayers">Kaikki pelaajat</a>
+            </li>
+            <li>
+              <a href="https://www.liigaporssi.fi/">Liveseuranta Liigapörssi</a>
+            </li>
+        </ul>
+      </nav>
+      <h1></h1>
+      <div id="container" style="width:800px;"></div>
+      <div id="errors"></div>
+    </main>
+    <footer class="footer">
+      <p id="demo"></p>
+    </footer>
+    <script src="frontend/tablestyle.js"></script>
+    <script>
+      var d = new Date();
+      document.getElementById("demo").innerHTML = d;
+    </script>
+  </body>
+</html>

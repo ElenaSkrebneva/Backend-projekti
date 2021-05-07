@@ -5,9 +5,3 @@ for (var i = 0; i < players.length; i++) {
     players[i].getElementsByClassName("reserve_btn")[0].disabled = true;
   }
 }
-var btnz = document.getElementsByClassName("reserve_btn")
-for (var i = 0; i < btnz.length; i++) {
-  btnz[i].addEventListener('click', function() {
-    window.alert("Olet varannut pelaajan")
-  })
-}

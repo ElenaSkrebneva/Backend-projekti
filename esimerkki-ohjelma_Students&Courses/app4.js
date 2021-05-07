@@ -12,7 +12,6 @@ require("./models/db")
 
 
 const port = 3000
-module.exports = port
 const Student_model = require('./models/student')
 const Course_model = require('./models/course')
 
