@@ -69,7 +69,10 @@ function addButtons_forAllPlayers(tr) {
 Delete_fromAllPlayers = function (oButton) {
   var activeRow = oButton.parentNode.parentNode.rowIndex;
   var tab = document.getElementById('allplayers_table').rows[activeRow];
+  var td = tab.getElementsByTagName("td")[0];
+  var id = td.innerHTML;
   var player = {
+    "_id": id,
     "PlayerNumber" : 0,
     "first_name": "",
     "last_name": "",
@@ -86,7 +89,7 @@ Delete_fromAllPlayers = function (oButton) {
     var fieldVal = tab.getElementsByTagName("td")[i].innerHTML
     player[keys[i]] = fieldVal
   }
-  var id = tab.getElementsByTagName("td")[0].innerHTML
+  var player_num = tab.getElementsByTagName("td")[1].innerHTML
   console.log("player = ", player)
   axios.post('http://localhost:'+port+'/myteam/', player)
           .then(function (response) {
@@ -98,7 +101,7 @@ Delete_fromAllPlayers = function (oButton) {
               console.log("Error in putting a player into MyTeam database" + error)
           });
 
-  axios.delete('http://localhost:'+port+'/allplayers/' + id)
+  axios.delete('http://localhost:'+port+'/allplayers/' + player_num)
           .then(function (response) {
               //console.log(response.data)
               console.log("Response = ", response.status)

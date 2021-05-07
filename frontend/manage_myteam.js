@@ -69,7 +69,10 @@ function addButtons_forMyTeam(tr) {
 Delete_fromMyTeam = function (oButton) {
   var activeRow = oButton.parentNode.parentNode.rowIndex;
   var tab = document.getElementById('myteam_table').rows[activeRow];
+  var td = tab.getElementsByTagName("td")[0];
+  var id = td.innerHTML;
   var player = {
+    "_id": id,
     "PlayerNumber" : 0,
     "first_name": "",
     "last_name": "",
