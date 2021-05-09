@@ -1,5 +1,5 @@
-export const PORT = 3000;
-export const HEADERS = [
+const HEADERS = [
+  "_id",
   "PlayerNumber",
   "first_name",
   "last_name",
@@ -11,3 +11,4 @@ export const HEADERS = [
   "Takalukset",
   "Tehotilasto"
 ];
+const PORT = 3000

@@ -1,11 +1,25 @@
 var my_players = [];
-import {PORT as port, HEADERS as headers} from './constants.js';
+var port = 3000;
+var headers = [
+  "_id",
+  "PlayerNumber",
+  "first_name",
+  "last_name",
+  "Position",
+  "Maalit",
+  "Syotot",
+  "Laukaukset",
+  "Blokkaukset",
+  "Takalukset",
+  "Tehotilasto"
+];
 
 function findAllAndCreateTable_forAllPlayers() {
     document.querySelector("#errors").innerHTML = "";
     axios.get('http://localhost:'+port+'/allplayers')
         .then(function (response) {
             my_players = response.data
+            console.log(my_players);
             createTable_forAllPlayers(my_players)
         })
         .catch(function (error) {
@@ -60,13 +74,13 @@ function addButtons_forAllPlayers(tr) {
     btDelete.setAttribute('value', 'Varaa');
     btDelete.classList.add("reserve_btn");
     btDelete.setAttribute('style', 'background-color:#ED5650;');
-    btDelete.setAttribute('onclick', 'Delete_fromAllPlayers(this)');   // ADD THE BUTTON's 'onclick' EVENT.
+    btDelete.setAttribute('onclick', 'delete_fromAllPlayers(this)');   // ADD THE BUTTON's 'onclick' EVENT.
     td.appendChild(btDelete);
     tr.appendChild(td)
 }
 
 // DELETE DATA.
-Delete_fromAllPlayers = function (oButton) {
+function delete_fromAllPlayers (oButton) {
   var activeRow = oButton.parentNode.parentNode.rowIndex;
   var tab = document.getElementById('allplayers_table').rows[activeRow];
   var td = tab.getElementsByTagName("td")[0];

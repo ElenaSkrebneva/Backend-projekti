@@ -1,11 +1,25 @@
 var my_players = [];
-import {PORT as port, HEADERS as headers} from './constants.js';
+var port = 3000;
+var headers = [
+  "_id",
+  "PlayerNumber",
+  "first_name",
+  "last_name",
+  "Position",
+  "Maalit",
+  "Syotot",
+  "Laukaukset",
+  "Blokkaukset",
+  "Takalukset",
+  "Tehotilasto"
+];
 
 function findAllAndCreateTable_forMyTeam() {
     document.querySelector("#errors").innerHTML = "";
     axios.get('http://localhost:'+port+'/myteam')
         .then(function (response) {
-            my_players = response.data
+            my_players = response.data;
+            console.log(my_players);
             createTable_forMyTeam(my_players)
         })
         .catch(function (error) {
@@ -60,19 +74,17 @@ function addButtons_forMyTeam(tr) {
     btDelete.setAttribute('value', 'Vapauta');
     btDelete.classList.add("free_btn");
     btDelete.setAttribute('style', 'background-color:#ED5650;');
-    btDelete.setAttribute('onclick', 'Delete_fromMyTeam(this)');   // ADD THE BUTTON's 'onclick' EVENT.
+    btDelete.setAttribute('onclick', 'delete_fromMyTeam(this)');   // ADD THE BUTTON's 'onclick' EVENT.
     td.appendChild(btDelete);
     tr.appendChild(td)
 }
 
 // DELETE DATA.
-Delete_fromMyTeam = function (oButton) {
+function delete_fromMyTeam (oButton) {
   var activeRow = oButton.parentNode.parentNode.rowIndex;
   var tab = document.getElementById('myteam_table').rows[activeRow];
-  var td = tab.getElementsByTagName("td")[0];
-  var id = td.innerHTML;
   var player = {
-    "_id": id,
+    "_id": 0,
     "PlayerNumber" : 0,
     "first_name": "",
     "last_name": "",
@@ -89,7 +101,6 @@ Delete_fromMyTeam = function (oButton) {
     var fieldVal = tab.getElementsByTagName("td")[i].innerHTML
     player[keys[i]] = fieldVal
   }
-  var id = tab.getElementsByTagName("td")[0].innerHTML
   console.log("player = ", player)
   axios.post('http://localhost:'+port+'/allplayers/', player)
           .then(function (response) {

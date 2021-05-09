@@ -1,15 +1,14 @@
-
 const express = require('express')
 const app = express()
 const parser = require('body-parser')
 const url = require('url')
 const path = require('path')
 app.use(parser.json())
-app.use(express.static('./../frontend'))
-app.use(express.static('./../style'))
+app.use(express.static('../frontend'))
+app.use(express.static('../style'))
 const mongoose = require('mongoose')
 require("./db")
-import {PORT as port} from './../frontend/constants.js';
+const PORT = require('./backend-constants.js')
 const Allplayer_model = require('./models/player')
 const Myteam_model = require('./models/player')
 
@@ -37,7 +36,7 @@ app.get('/myteam', (req, res) => {
 
 app.post('/allplayers', (req, res) => {
   var new_toallplayers = req.body
-  var new_toallplayers_instance = new Allplayer_model(new_player)
+  var new_toallplayers_instance = new Allplayer_model(new_toallplayers)
   new_toallplayers_instance.save(err => {
     if (err) res.status(500).send("Error in saving: " + err)
     else {res.status(201).send("Player added to all players")}
@@ -56,7 +55,7 @@ app.post('/myteam', (req, res) => {
 app.delete('/allplayers/:player_number', (req, res) => {
   var num = req.params.player_number
   var query = {player_number: num}
-  Allplayers_model.deleteOne(query, (err, result) => {
+  Allplayer_model.deleteOne(query, (err, result) => {
     if (err) res.status(500).send("An error in handling the deleteOne request")
     else if (result) {
       console.log(result)
@@ -79,6 +78,6 @@ app.delete('/myteam/:player_number', (req, res) => {
   })
 })
 
-app.listen(port, function() {
-  console.log('app listening at http://localhost:'+port)
+app.listen(PORT, function() {
+  console.log('app listening at http://localhost:'+PORT)
 })
