@@ -8,9 +8,9 @@ app.use(express.static('../frontend'))
 app.use(express.static('../style'))
 const mongoose = require('mongoose')
 require("./db")
-const PORT = require('./backend-constants.js')
-const Allplayer_model = require('./models/player')
-const Myteam_model = require('./models/player')
+const PORT = 3000
+const Allplayer_model = require('./models/allplayer_player')
+const Myteam_model = require('./models/myteam_player')
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname+'/../index.html'))
@@ -52,10 +52,9 @@ app.post('/myteam', (req, res) => {
   })
 })
 
-app.delete('/allplayers/:player_number', (req, res) => {
-  var num = req.params.player_number
-  var query = {player_number: num}
-  Allplayer_model.deleteOne(query, (err, result) => {
+app.delete('/allplayers/:id', (req, res) => {
+  var num = req.params.id
+  Allplayer_model.findByIdAndDelete(num, (err, result) => {
     if (err) res.status(500).send("An error in handling the deleteOne request")
     else if (result) {
       console.log(result)
@@ -65,10 +64,9 @@ app.delete('/allplayers/:player_number', (req, res) => {
   })
 })
 
-app.delete('/myteam/:player_number', (req, res) => {
-  var num = req.params.player_number
-  var query = {player_number: num}
-  Myteam_model.deleteOne(query, (err, result) => {
+app.delete('/myteam/:id', (req, res) => {
+  var num = req.params.id
+  Myteam_model.findByIdAndDelete(num, (err, result) => {
     if (err) res.status(500).send("An error in handling the deleteOne request")
     else if (result) {
       console.log(result)

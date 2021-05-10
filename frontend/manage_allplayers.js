@@ -2,16 +2,16 @@ var my_players = [];
 var port = 3000;
 var headers = [
   "_id",
-  "PlayerNumber",
+  "player_number",
   "first_name",
   "last_name",
-  "Position",
-  "Maalit",
-  "Syotot",
-  "Laukaukset",
-  "Blokkaukset",
-  "Takalukset",
-  "Tehotilasto"
+  "position",
+  "maalit",
+  "syotot",
+  "laukaukset",
+  "blokkaukset",
+  "taklaukset",
+  "tehotilasto"
 ];
 
 function findAllAndCreateTable_forAllPlayers() {
@@ -87,23 +87,22 @@ function delete_fromAllPlayers (oButton) {
   var id = td.innerHTML;
   var player = {
     "_id": id,
-    "PlayerNumber" : 0,
+    "player_number" : 0,
     "first_name": "",
     "last_name": "",
-    "Position": "",
-    "Maalit": 0,
-    "Syotot": 0,
-    "Laukaukset": 0,
-    "Blokkaukset": 0,
-    "Takalukset": 0,
-    "Tehotilasto": 0
+    "position": "",
+    "maalit": 0,
+    "syotot": 0,
+    "laukaukset": 0,
+    "blokkaukset": 0,
+    "taklaukset": 0,
+    "tehotilasto": 0
   }
   var keys = Object.keys(player)
   for (var i = 0; i < keys.length; i++) {
     var fieldVal = tab.getElementsByTagName("td")[i].innerHTML
     player[keys[i]] = fieldVal
   }
-  var player_num = tab.getElementsByTagName("td")[1].innerHTML
   console.log("player = ", player)
   axios.post('http://localhost:'+port+'/myteam/', player)
           .then(function (response) {
@@ -115,7 +114,7 @@ function delete_fromAllPlayers (oButton) {
               console.log("Error in putting a player into MyTeam database" + error)
           });
 
-  axios.delete('http://localhost:'+port+'/allplayers/' + player_num)
+  axios.delete('http://localhost:'+port+'/allplayers/' + id)
           .then(function (response) {
               //console.log(response.data)
               console.log("Response = ", response.status)

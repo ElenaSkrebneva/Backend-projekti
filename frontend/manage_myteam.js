@@ -2,16 +2,16 @@ var my_players = [];
 var port = 3000;
 var headers = [
   "_id",
-  "PlayerNumber",
+  "player_number",
   "first_name",
   "last_name",
-  "Position",
-  "Maalit",
-  "Syotot",
-  "Laukaukset",
-  "Blokkaukset",
-  "Takalukset",
-  "Tehotilasto"
+  "position",
+  "maalit",
+  "syotot",
+  "laukaukset",
+  "blokkaukset",
+  "taklaukset",
+  "tehotilasto"
 ];
 
 function findAllAndCreateTable_forMyTeam() {
@@ -83,18 +83,20 @@ function addButtons_forMyTeam(tr) {
 function delete_fromMyTeam (oButton) {
   var activeRow = oButton.parentNode.parentNode.rowIndex;
   var tab = document.getElementById('myteam_table').rows[activeRow];
+  var td = tab.getElementsByTagName("td")[0];
+  var id = td.innerHTML;
   var player = {
-    "_id": 0,
-    "PlayerNumber" : 0,
+    "_id": id,
+    "player_number" : 0,
     "first_name": "",
     "last_name": "",
-    "Position": "",
-    "Maalit": 0,
-    "Syotot": 0,
-    "Laukaukset": 0,
-    "Blokkaukset": 0,
-    "Takalukset": 0,
-    "Tehotilasto": 0
+    "position": "",
+    "maalit": 0,
+    "syotot": 0,
+    "laukaukset": 0,
+    "blokkaukset": 0,
+    "taklaukset": 0,
+    "tehotilasto": 0
   }
   var keys = Object.keys(player)
   for (var i = 0; i < keys.length; i++) {
