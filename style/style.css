@@ -7,32 +7,18 @@
     text-align: center;
     color: white;
 }
-
 .topnav {
   overflow: hidden;
   background-color: mediumblue;
 }
-
-.topnav ul {
-  list-style: none;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-
-.topnav li {
-  padding: 0;
-  margin: 0;
-}
-
 .topnav a {
+  float: left;
   display: block;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
-
 /*Väri kun hiiri päällä */
 .topnav a:hover {
   background-color: #ddd;
