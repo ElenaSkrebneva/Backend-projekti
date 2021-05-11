@@ -10,10 +10,21 @@
 .topnav {
   overflow: hidden;
   background-color: mediumblue;
+  padding: 20px;
+}
+.topnav__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.topnav__list li {
+  margin: 0;
+  padding: 0;
 }
 .topnav a {
-  float: left;
-  display: block;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
@@ -23,6 +34,7 @@
 .topnav a:hover {
   background-color: #ddd;
   color: darkblue;
+  border-radius: 5px;
 }
 body {
   padding: 20px;
@@ -67,7 +79,6 @@ td:last-child, th:last-child {
 }
 @media screen and (max-width: 400px) {
   .topnav  {
-    float: none;
     width: 100%;
   }
 }
