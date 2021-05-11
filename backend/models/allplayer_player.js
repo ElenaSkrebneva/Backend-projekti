@@ -123,6 +123,26 @@ var docs = [
     "taklaukset": 0,
     "tehotilasto": 0
   },
+  {
+    "player_number": 11,
+    "first_name": "Milla",
+    "last_name": "Magia",
+    "position": "Goalkeeper",
+    "syotot": 0,
+    "maalit": 0,
+    "torjunnat": 0,
+    "paastetyt_maalit": 0,
+  },
+  {
+    "player_number": 12,
+    "first_name": "Kroisos",
+    "last_name": "Pennonen",
+    "position": "Goalkeeper",
+    "torjunnat": 0,
+    "paastetyt_maalit": 0,
+    "syotot": 0,
+    "maalit": 0
+  }
 ];
 /*
 // Jos tarvii lisätä pelaajat, tämä lisää kaikki kokoelmaan "allplayers" "project2" tietokantaan. Tätä tiedostoa ei tarvi käynnistää erikseen. App.js vain pyörimään
