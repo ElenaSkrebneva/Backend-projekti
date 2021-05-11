@@ -45,7 +45,7 @@ function findAllAndCreateTable_forMyTeam() {
             createTable_forMyGoalkeepers(maalivahdit)
         })
         .catch(function (error) {
-            console.log("error in fetching the players", error)
+            console.log("error in fetching the players. ", error)
             document.getElementById("myteam_table").innerHTML = "";
             document.getElementById("mygoalkeepers_table").innerHTML = "";
         });
@@ -141,7 +141,7 @@ function delete_fromMyTeam (oButton) {
           })
           .catch(function (error) {
               document.querySelector("#errors").innerHTML = error
-              console.log("Error in putting a player into allplayers database" + error)
+              console.log("Error in putting a player into allplayers database. " + error)
           });
 
   axios.delete('http://localhost:'+port+'/myteam/' + id)
@@ -152,7 +152,7 @@ function delete_fromMyTeam (oButton) {
           })
           .catch(function (error) {
               document.querySelector("#errors").innerHTML = error
-              console.log("error in deleting a player from myteam database", error)
+              console.log("error in deleting a player from myteam database. ", error)
           });
   window.alert("Olet vapauttanut pelaajan")
 };
@@ -186,7 +186,7 @@ function delete_fromMyGoalkeepers (oButton) {
           })
           .catch(function (error) {
               document.querySelector("#errors").innerHTML = error
-              console.log("Error in putting a goalkeeper into allplayers database" + error)
+              console.log("Error in putting a goalkeeper into allplayers database. " + error)
           });
 
   axios.delete('http://localhost:'+port+'/myteam/' + id)
@@ -197,7 +197,7 @@ function delete_fromMyGoalkeepers (oButton) {
           })
           .catch(function (error) {
               document.querySelector("#errors").innerHTML = error
-              console.log("error in deleting a goalkeeper from myteam database", error)
+              console.log("error in deleting a goalkeeper from myteam database. ", error)
           });
   window.alert("Olet vapauttanut maalivahdin")
 };

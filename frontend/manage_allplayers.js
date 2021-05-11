@@ -45,7 +45,7 @@ function findAllAndCreateTable_forAllPlayers() {
             createTable_forAllGoalkeepers(maalivahdit)
         })
         .catch(function (error) {
-            console.log("error in fetching the players", error)
+            console.log("error in fetching the players. ", error)
             document.getElementById("allplayers_table").innerHTML = "";
             document.getElementById("allgoalkeepers_table").innerHTML = "";
         });
@@ -111,93 +111,134 @@ function addButtons_forAllPlayers(tr, func) {
 
 
 function delete_fromAllPlayers (oButton) {
-  var activeRow = oButton.parentNode.parentNode.rowIndex;
-  var tab = document.getElementById('allplayers_table').rows[activeRow];
-  var td = tab.getElementsByTagName("td")[0];
-  var id = td.innerHTML;
-  var player = {
-    "_id": id,
-    "player_number" : 0,
-    "first_name": "",
-    "last_name": "",
-    "position": "",
-    "maalit": 0,
-    "syotot": 0,
-    "laukaukset": 0,
-    "blokkaukset": 0,
-    "taklaukset": 0,
-    "tehotilasto": 0
-  }
-  var keys = Object.keys(player)
-  for (var i = 0; i < keys.length; i++) {
-    var fieldVal = tab.getElementsByTagName("td")[i].innerHTML
-    player[keys[i]] = fieldVal
-  }
-  console.log("player = ", player)
-  axios.post('http://localhost:'+port+'/myteam/', player)
-          .then(function (response) {
-              //console.log(response.data)
-              console.log("Response = ", response.status)
-          })
-          .catch(function (error) {
-              document.querySelector("#errors").innerHTML = error
-              console.log("Error in putting a player into MyTeam database" + error)
-          });
+  axios.get('http://localhost:'+port+'/myteam')
+      .then(function (response) {
+          var myteam_players = response.data
+          console.log("Myplayers team length is" + myteam_players.length)
+          // jakaa pelaajia kenttäpelaajiin ja maalivahteihin
+          if (myteam_players.length < 6) {
+            var activeRow = oButton.parentNode.parentNode.rowIndex;
+            var tab = document.getElementById('allplayers_table').rows[activeRow];
+            var td = tab.getElementsByTagName("td")[0];
+            var id = td.innerHTML;
+            var player = {
+              "_id": id,
+              "player_number" : 0,
+              "first_name": "",
+              "last_name": "",
+              "position": "",
+              "maalit": 0,
+              "syotot": 0,
+              "laukaukset": 0,
+              "blokkaukset": 0,
+              "taklaukset": 0,
+              "tehotilasto": 0
+            }
+            var keys = Object.keys(player)
+            for (var i = 0; i < keys.length; i++) {
+              var fieldVal = tab.getElementsByTagName("td")[i].innerHTML
+              player[keys[i]] = fieldVal
+            }
+            console.log("player = ", player)
+            axios.post('http://localhost:'+port+'/myteam/', player)
+                    .then(function (response) {
+                        //console.log(response.data)
+                        console.log("Response = ", response.status)
+                    })
+                    .catch(function (error) {
+                        document.querySelector("#errors").innerHTML = error
+                        console.log("Error in putting a player into MyTeam database." + error)
+                    });
 
-  axios.delete('http://localhost:'+port+'/allplayers/' + id)
-          .then(function (response) {
-              //console.log(response.data)
-              console.log("Response = ", response.status)
-              findAllAndCreateTable_forAllPlayers()
-          })
-          .catch(function (error) {
-              document.querySelector("#errors").innerHTML = error
-              console.log("error in deleting a player from AllPlayers database", error)
-          });
-  window.alert("Olet varannut pelaajan")
+            axios.delete('http://localhost:'+port+'/allplayers/' + id)
+                    .then(function (response) {
+                        //console.log(response.data)
+                        console.log("Response = ", response.status)
+                        findAllAndCreateTable_forAllPlayers()
+                    })
+                    .catch(function (error) {
+                        document.querySelector("#errors").innerHTML = error
+                        console.log("error in deleting a player from AllPlayers database. ", error)
+                    });
+            window.alert("Olet varannut pelaajan")
+          }
+          else {
+            window.alert("Sinulla on jo 6 pelaajaa joukkueessasi. Sinun pitää vapauttaa pelaaja ennen kuin voit varata uuden")
+          }
+      })
+      .catch(function (error) {
+          document.querySelector("#errors").innerHTML = error
+          console.log("error in fetching the playersfrom myteam. ", error)
+      });
+
 };
 
 function delete_fromAllGoalkeepers (oButton) {
-  var activeRow = oButton.parentNode.parentNode.rowIndex;
-  var tab = document.getElementById('allgoalkeepers_table').rows[activeRow];
-  var td = tab.getElementsByTagName("td")[0];
-  var id = td.innerHTML;
-  var goalkeeper = {
-    "_id": id,
-    "player_number" : 0,
-    "first_name": "",
-    "last_name": "",
-    "position": "",
-    "maalit": 0,
-    "syotot": 0,
-    "torjunnat": 0,
-    "paastetyt_maalit": 0
-  }
-  var keys = Object.keys(goalkeeper)
-  for (var i = 0; i < keys.length; i++) {
-    var fieldVal = tab.getElementsByTagName("td")[i].innerHTML
-    goalkeeper[keys[i]] = fieldVal
-  }
-  console.log("goalkeeper = ", goalkeeper)
-  axios.post('http://localhost:'+port+'/myteam/', goalkeeper)
-          .then(function (response) {
-              //console.log(response.data)
-              console.log("Response = ", response.status)
-          })
-          .catch(function (error) {
-              document.querySelector("#errors").innerHTML = error
-              console.log("Error in putting a goalkeeper into MyTeam database" + error)
-          });
+  axios.get('http://localhost:'+port+'/myteam')
+      .then(function (response) {
+          var myteam_players = response.data
+          var myteam_maalivahdit = []
+          for (var i = 0; i < myteam_players.length; i++) {
+            if (myteam_players[i]["position"] === "Goalkeeper") {
+              myteam_maalivahdit.push(myteam_players[i]);
+            }
+          }
+          console.log("Myplayers team length is" + myteam_players.length)
+          console.log("My goalkeepers length is" + myteam_maalivahdit.length)
+          // jakaa pelaajia kenttäpelaajiin ja maalivahteihin
+          if (myteam_players.length >= 6) {
+            window.alert("Sinulla on jo 6 pelaajaa joukkueessasi. Sinun pitää vapauttaa pelaaja ennen kuin voit varata uuden")
+          }
+          else if (myteam_maalivahdit.length > 0) {
+            window.alert("Sinulla on jo maalivahti")
+          }
+          else {
+            var activeRow = oButton.parentNode.parentNode.rowIndex;
+            var tab = document.getElementById('allgoalkeepers_table').rows[activeRow];
+            var td = tab.getElementsByTagName("td")[0];
+            var id = td.innerHTML;
+            var goalkeeper = {
+              "_id": id,
+              "player_number" : 0,
+              "first_name": "",
+              "last_name": "",
+              "position": "",
+              "maalit": 0,
+              "syotot": 0,
+              "torjunnat": 0,
+              "paastetyt_maalit": 0
+            }
+            var keys = Object.keys(goalkeeper)
+            for (var i = 0; i < keys.length; i++) {
+              var fieldVal = tab.getElementsByTagName("td")[i].innerHTML
+              goalkeeper[keys[i]] = fieldVal
+            }
+            console.log("goalkeeper = ", goalkeeper)
+            axios.post('http://localhost:'+port+'/myteam/', goalkeeper)
+                    .then(function (response) {
+                        //console.log(response.data)
+                        console.log("Response = ", response.status)
+                    })
+                    .catch(function (error) {
+                        document.querySelector("#errors").innerHTML = error
+                        console.log("Error in putting a goalkeeper into MyTeam database. " + error)
+                    });
 
-  axios.delete('http://localhost:'+port+'/allplayers/' + id)
-          .then(function (response) {
-              //console.log(response.data)
-              console.log("Response = ", response.status)
-              findAllAndCreateTable_forAllPlayers()
-          })
-          .catch(function (error) {
-              document.querySelector("#errors").innerHTML = error
-              console.log("error in deleting a goalkeeper from AllPlayers database", error)
-          });
-  window.alert("Olet varannut maalivahdin")
+            axios.delete('http://localhost:'+port+'/allplayers/' + id)
+                    .then(function (response) {
+                        //console.log(response.data)
+                        console.log("Response = ", response.status)
+                        findAllAndCreateTable_forAllPlayers()
+                    })
+                    .catch(function (error) {
+                        document.querySelector("#errors").innerHTML = error
+                        console.log("error in deleting a goalkeeper from AllPlayers database. ", error)
+                    });
+            window.alert("Olet varannut maalivahdin")
+          }
+      })
+      .catch(function (error) {
+          document.querySelector("#errors").innerHTML = error
+          console.log("error in fetching the players from myteam. ", error)
+      });
 };
