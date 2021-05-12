@@ -1,4 +1,3 @@
-var my_players = [];
 var port = 3000;
 var headersForPlayers = [
   "_id",
@@ -27,22 +26,22 @@ var headersForGoalkeepers = [
 
 function findAllAndCreateTable_forMyTeam() {
     document.querySelector("#errors").innerHTML = "";
+    document.querySelector("#points_together").innerHTML = "";
     axios.get('http://localhost:'+port+'/myteam')
         .then(function (response) {
-            my_players = response.data
+            var my_players = response.data
             // jakaa pelaajia kenttäpelaajiin ja maalivahteihin
             var maalivahdit = [];
+            var kenttapelaajat = []
             for (var i = 0; i < my_players.length; i++) {
               if (my_players[i]["position"] === "Goalkeeper") {
                 maalivahdit.push(my_players[i]);
-                my_players.splice(i, 1);
-                i--;
               }
+              else {kenttapelaajat.push(my_players[i])}
             }
-            console.log(my_players);
-            console.log(maalivahdit);
-            createTable_forMyTeam(my_players)
+            createTable_forMyTeam(kenttapelaajat)
             createTable_forMyGoalkeepers(maalivahdit)
+            if (my_players.length > 0) {count_points(my_players)}
         })
         .catch(function (error) {
             console.log("error in fetching the players. ", error)
@@ -201,3 +200,16 @@ function delete_fromMyGoalkeepers (oButton) {
           });
   window.alert("Olet vapauttanut maalivahdin")
 };
+
+function count_points (items) {
+  var cont = document.getElementById("points_together");
+  cont.innerHTML = "";
+  var tehopisteet = 0;
+  for (var i = 0; i < items.length; i++) {
+    if (items[i].tehotilasto) {
+      tehopisteet += items[i].tehotilasto
+    }
+  }
+  var str = "Joukkueen tehopisteet: " + tehopisteet
+  cont.innerHTML += str
+}

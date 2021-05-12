@@ -145,7 +145,7 @@ var docs = [
   }
 ];
 /*
-// Jos tarvii lisätä pelaajat, tämä lisää kaikki kokoelmaan "allplayers" "project2" tietokantaan. Tätä tiedostoa ei tarvi käynnistää erikseen. App.js vain pyörimään
+// Jos tarvii lisätä pelaajat, tämä lisää kaikki kokoelmaan "allplayers" "project2" tietokantaan. Tätä tiedostoa ei tarvi käynnistää erikseen. Avaat kommennon ja app.js vain pyörimään
 docs.forEach(doc => {
   Allplayer_model.create(doc, (err, new_instance) => {
     if (err) {console.log(err)}

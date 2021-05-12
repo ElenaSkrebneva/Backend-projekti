@@ -1,4 +1,3 @@
-var my_players = [];
 var port = 3000;
 var headersForPlayers = [
   "_id",
@@ -27,21 +26,20 @@ var headersForGoalkeepers = [
 
 function findAllAndCreateTable_forAllPlayers() {
     document.querySelector("#errors").innerHTML = "";
+    document.querySelector("#points_together").innerHTML = "";
     axios.get('http://localhost:'+port+'/allplayers')
         .then(function (response) {
-            my_players = response.data
+            var my_players = response.data
             // jakaa pelaajia kenttäpelaajiin ja maalivahteihin
-            var maalivahdit = [];
+            var kenttapelaajat = []
+            var maalivahdit = []
             for (var i = 0; i < my_players.length; i++) {
               if (my_players[i]["position"] === "Goalkeeper") {
-                maalivahdit.push(my_players[i]);
-                my_players.splice(i, 1);
-                i--;
+                maalivahdit.push(my_players[i])
               }
+              else {kenttapelaajat.push(my_players[i])}
             }
-            console.log(my_players);
-            console.log(maalivahdit);
-            createTable_forAllPlayers(my_players)
+            createTable_forAllPlayers(kenttapelaajat)
             createTable_forAllGoalkeepers(maalivahdit)
         })
         .catch(function (error) {
