@@ -13,7 +13,7 @@ const Player_schema = new Schema({
   taklaukset:{type: Number, min: [0,"Cannot be smaller than 0"], max: [99, "Cannot be greater than 99"]},
   tehotilasto:{type: Number, min: [-99,"Cannot be smaller than -99"], max: [99, "Cannot be greater than 99"]},
   torjunnat: {type: Number, min: [0,"Cannot be smaller than 0"], max: [99, "Cannot be greater than 99"]},
-  paastetyt_maalit: {type: Number, min: [0,"Cannot be smaller than 0"], max: [99, "Cannot be greater than 99"]},
+  paastetyt_maalit: {type: Number, min: [-99,"Cannot be smaller than -99"], max: [0, "Cannot be greater than 0"]},
 })
 
 module.exports = Player_schema
