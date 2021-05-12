@@ -8,12 +8,12 @@ var docs = [
   "first_name": "Aku",
   "last_name": "Ankka",
   "position": "Forward",
-  "maalit": 0,
+  "maalit": 1,
   "syotot": 0,
-  "laukaukset": 0,
-  "blokkaukset": 0,
-  "taklaukset": 0,
-  "tehotilasto": 0
+  "laukaukset": 4,
+  "blokkaukset": 3,
+  "taklaukset": 2,
+  "tehotilasto": -1
   },
   {
    "player_number": 2,
@@ -21,10 +21,10 @@ var docs = [
     "last_name": "Ankka",
     "position": "Forward",
     "maalit": 0,
-    "syotot": 0,
-    "laukaukset": 0,
-    "blokkaukset": 0,
-    "taklaukset": 0,
+    "syotot": 1,
+    "laukaukset": 1,
+    "blokkaukset": 4,
+    "taklaukset": 2,
     "tehotilasto": 0
   },
   {
@@ -32,12 +32,12 @@ var docs = [
     "first_name": "Minni",
     "last_name": "Hiiri",
     "position": "Forward",
-    "maalit": 0,
+    "maalit": 1,
     "syotot": 0,
-    "laukaukset": 0,
+    "laukaukset": 3,
     "blokkaukset": 0,
-    "taklaukset": 0,
-    "tehotilasto": 0
+    "taklaukset": 1,
+    "tehotilasto": 1
   },
   {
     "player_number": 4,
@@ -46,9 +46,9 @@ var docs = [
     "position": "Forward",
     "maalit": 0,
     "syotot": 0,
-    "laukaukset": 0,
-    "blokkaukset": 0,
-    "taklaukset": 0,
+    "laukaukset": 4,
+    "blokkaukset": 4,
+    "taklaukset": 4,
     "tehotilasto": 0
   },
   {
@@ -56,20 +56,20 @@ var docs = [
     "first_name": "Roope",
     "last_name": "Ankka",
     "position": "Forward",
-    "maalit": 0,
-    "syotot": 0,
-    "laukaukset": 0,
-    "blokkaukset": 0,
-    "taklaukset": 0,
-    "tehotilasto": 0
+    "maalit": 1,
+    "syotot": 4,
+    "laukaukset": 4,
+    "blokkaukset": 2,
+    "taklaukset": 1,
+    "tehotilasto": 4
   },
   {
     "player_number": 6,
     "first_name": "Hannu",
     "last_name": "Hanhi",
-    "maalit": 0,
-    "syotot": 0,
     "position": "Forward",
+    "maalit": 0,
+    "syotot": 3,
     "laukaukset": 0,
     "blokkaukset": 0,
     "taklaukset": 0,
@@ -80,12 +80,12 @@ var docs = [
     "first_name": "Hessu",
     "last_name": "Hopo",
     "position": "Defender",
-    "maalit": 0,
-    "syotot": 0,
-    "laukaukset": 0,
-    "blokkaukset": 0,
-    "taklaukset": 0,
-    "tehotilasto": 0
+    "maalit": 1,
+    "syotot": 1,
+    "laukaukset": 1,
+    "blokkaukset": 1,
+    "taklaukset": 1,
+    "tehotilasto": 1
   },
   {
     "player_number": 8,
@@ -96,19 +96,19 @@ var docs = [
     "syotot": 0,
     "laukaukset": 0,
     "blokkaukset": 0,
-    "taklaukset": 0,
-    "tehotilasto": 0
+    "taklaukset": 3,
+    "tehotilasto": -3
   },
   {
     "player_number": 9,
     "first_name": "Hupu",
     "last_name": "Ankka",
     "position": "Defender",
-    "maalit": 0,
+    "maalit": 1,
     "syotot": 0,
-    "laukaukset": 0,
+    "laukaukset": 1,
     "blokkaukset": 0,
-    "taklaukset": 0,
+    "taklaukset": 4,
     "tehotilasto": 0
   },
   {
@@ -117,11 +117,11 @@ var docs = [
     "last_name": "Ankka",
     "position": "Defender",
     "maalit": 0,
-    "syotot": 0,
-    "laukaukset": 0,
-    "blokkaukset": 0,
-    "taklaukset": 0,
-    "tehotilasto": 0
+    "syotot": 3,
+    "laukaukset": 3,
+    "blokkaukset": 1,
+    "taklaukset": 1,
+    "tehotilasto": 2
   },
   {
     "player_number": 11,
@@ -130,8 +130,8 @@ var docs = [
     "position": "Goalkeeper",
     "syotot": 0,
     "maalit": 0,
-    "torjunnat": 0,
-    "paastetyt_maalit": 0,
+    "torjunnat": 30,
+    "paastetyt_maalit": 1,
   },
   {
     "player_number": 12,
