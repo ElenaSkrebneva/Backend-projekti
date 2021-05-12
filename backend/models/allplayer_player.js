@@ -131,16 +131,16 @@ var docs = [
     "syotot": 0,
     "maalit": 0,
     "torjunnat": 30,
-    "paastetyt_maalit": 1,
+    "paastetyt_maalit": -1,
   },
   {
     "player_number": 12,
     "first_name": "Kroisos",
     "last_name": "Pennonen",
     "position": "Goalkeeper",
-    "torjunnat": 0,
-    "paastetyt_maalit": 0,
-    "syotot": 0,
+    "torjunnat": 20,
+    "paastetyt_maalit": -5,
+    "syotot": 1,
     "maalit": 0
   }
 ];

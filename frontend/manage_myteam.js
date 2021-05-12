@@ -81,6 +81,9 @@ function createTable_forMyGoalkeepers (items) {
 
 function createHeaders_forMyTeam(table, headers) {
    var tr = table.insertRow(-1)
+   var th1 = document.createElement('th')
+   th1.innerHTML = "picture"
+   tr.appendChild(th1)
    headers.forEach(function(val){
        var th = document.createElement('th')
        th.innerHTML = val
@@ -89,6 +92,8 @@ function createHeaders_forMyTeam(table, headers) {
 }
 
 function addData_forMyTeam(tr, player, headers) {
+    var new_cell = tr.insertCell(-1)
+    new_cell.innerHTML = `<img src="player${player.player_number}.jpg" width=100 height=100 alt="${player.first_name} ${player.last_name}">`
     headers.forEach(function(val) {
       var tabCell = tr.insertCell(-1);
       tabCell.innerHTML = player[val];
@@ -112,7 +117,7 @@ function addButtons_forMyTeam(tr, func) {
 function delete_fromMyTeam (oButton) {
   var activeRow = oButton.parentNode.parentNode.rowIndex;
   var tab = document.getElementById('myteam_table').rows[activeRow];
-  var td = tab.getElementsByTagName("td")[0];
+  var td = tab.getElementsByTagName("td")[1];
   var id = td.innerHTML;
   var player = {
     "_id": id,
@@ -129,7 +134,7 @@ function delete_fromMyTeam (oButton) {
   }
   var keys = Object.keys(player)
   for (var i = 0; i < keys.length; i++) {
-    var fieldVal = tab.getElementsByTagName("td")[i].innerHTML
+    var fieldVal = tab.getElementsByTagName("td")[i+1].innerHTML
     player[keys[i]] = fieldVal
   }
   console.log("player = ", player)
@@ -159,7 +164,7 @@ function delete_fromMyTeam (oButton) {
 function delete_fromMyGoalkeepers (oButton) {
   var activeRow = oButton.parentNode.parentNode.rowIndex;
   var tab = document.getElementById('mygoalkeepers_table').rows[activeRow];
-  var td = tab.getElementsByTagName("td")[0];
+  var td = tab.getElementsByTagName("td")[1];
   var id = td.innerHTML;
   var goalkeeper = {
     "_id": id,
@@ -174,7 +179,7 @@ function delete_fromMyGoalkeepers (oButton) {
   }
   var keys = Object.keys(goalkeeper)
   for (var i = 0; i < keys.length; i++) {
-    var fieldVal = tab.getElementsByTagName("td")[i].innerHTML
+    var fieldVal = tab.getElementsByTagName("td")[i+1].innerHTML
     goalkeeper[keys[i]] = fieldVal
   }
   console.log("goalkeeper = ", goalkeeper)
@@ -204,12 +209,23 @@ function delete_fromMyGoalkeepers (oButton) {
 function count_points (items) {
   var cont = document.getElementById("points_together");
   cont.innerHTML = "";
-  var tehopisteet = 0;
+  var pisteet = 0;
   for (var i = 0; i < items.length; i++) {
-    if (items[i].tehotilasto) {
-      tehopisteet += items[i].tehotilasto
+    if (items[i].position === "Goalkeeper") {
+      pisteet += items[i].maalit
+      pisteet += items[i].syotot
+      pisteet += items[i].torjunnat
+      pisteet += items[i].paastetyt_maalit
+    }
+    else {
+      pisteet += items[i].maalit
+      pisteet += items[i].syotot
+      pisteet += items[i].laukaukset
+      pisteet += items[i].blokkaukset
+      pisteet += items[i].taklaukset
+      pisteet += items[i].tehotilasto
     }
   }
-  var str = "Joukkueen tehopisteet: " + tehopisteet
+  var str = "Joukkueen tehopisteet: " + pisteet
   cont.innerHTML += str
 }

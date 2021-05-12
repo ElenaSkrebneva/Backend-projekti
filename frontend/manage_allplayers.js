@@ -80,6 +80,9 @@ function createTable_forAllGoalkeepers (items) {
 
 function createHeaders_forAllPlayers(table, headers) {
    var tr = table.insertRow(-1)
+   var th1 = document.createElement('th')
+   th1.innerHTML = "picture"
+   tr.appendChild(th1)
    headers.forEach(function(val){
        var th = document.createElement('th')
        th.innerHTML = val
@@ -88,6 +91,8 @@ function createHeaders_forAllPlayers(table, headers) {
 }
 
 function addData_forAllPlayers(tr, player, headers) {
+    var new_cell = tr.insertCell(-1)
+    new_cell.innerHTML = `<img src="player${player.player_number}.jpg" width=100 height=100 alt="${player.first_name} ${player.last_name}">`
     headers.forEach(function(val) {
       var tabCell = tr.insertCell(-1);
       tabCell.innerHTML = player[val];
@@ -117,7 +122,7 @@ function delete_fromAllPlayers (oButton) {
           if (myteam_players.length < 6) {
             var activeRow = oButton.parentNode.parentNode.rowIndex;
             var tab = document.getElementById('allplayers_table').rows[activeRow];
-            var td = tab.getElementsByTagName("td")[0];
+            var td = tab.getElementsByTagName("td")[1];
             var id = td.innerHTML;
             var player = {
               "_id": id,
@@ -134,7 +139,7 @@ function delete_fromAllPlayers (oButton) {
             }
             var keys = Object.keys(player)
             for (var i = 0; i < keys.length; i++) {
-              var fieldVal = tab.getElementsByTagName("td")[i].innerHTML
+              var fieldVal = tab.getElementsByTagName("td")[i+1].innerHTML
               player[keys[i]] = fieldVal
             }
             console.log("player = ", player)
@@ -193,7 +198,7 @@ function delete_fromAllGoalkeepers (oButton) {
           else {
             var activeRow = oButton.parentNode.parentNode.rowIndex;
             var tab = document.getElementById('allgoalkeepers_table').rows[activeRow];
-            var td = tab.getElementsByTagName("td")[0];
+            var td = tab.getElementsByTagName("td")[1];
             var id = td.innerHTML;
             var goalkeeper = {
               "_id": id,
@@ -208,7 +213,7 @@ function delete_fromAllGoalkeepers (oButton) {
             }
             var keys = Object.keys(goalkeeper)
             for (var i = 0; i < keys.length; i++) {
-              var fieldVal = tab.getElementsByTagName("td")[i].innerHTML
+              var fieldVal = tab.getElementsByTagName("td")[i+1].innerHTML
               goalkeeper[keys[i]] = fieldVal
             }
             console.log("goalkeeper = ", goalkeeper)

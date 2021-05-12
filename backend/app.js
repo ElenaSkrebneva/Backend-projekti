@@ -6,6 +6,7 @@ const path = require('path')
 app.use(parser.json())
 app.use(express.static('../frontend'))
 app.use(express.static('../style'))
+app.use(express.static('../img'))
 const mongoose = require('mongoose')
 require("./db")
 const PORT = 3000
