@@ -5,6 +5,7 @@
 .background-image {
     padding: 1px;
 	width: 100%;
+	overflow: hidden;
 	
 }
 .topnav {
@@ -27,7 +28,7 @@
 .topnav a {
   color: #f2f2f2;
   text-align: center;
-  padding: 10px 16px;
+  padding: 10px 40px;
   text-decoration: none;
 }
 /*Väri kun hiiri päällä */
@@ -37,8 +38,8 @@
   border-radius: 5px;
 }
 body {
-  padding: 20px;
-  font-family: Arial;
+  padding: 10px;
+  font-family: Calibri;
   background: #f1f1f1;
 }
 article {
@@ -54,11 +55,12 @@ table {
   border-collapse: collapse;
   width: 100%;
   text-align: center;
+    overflow: hidden;
 }
 
 td, th {
   border-right: 1px dashed blue;
-  padding: 15px;
+  padding: 10px;
 }
 
 td:last-child, th:last-child {
