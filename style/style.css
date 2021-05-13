@@ -3,14 +3,14 @@
 }
 
 .background-image {
-    padding: 3px;
+    padding: 1px;
 	width: 100%;
 	
 }
 .topnav {
   overflow: hidden;
   background-color: mediumblue;
-  padding: 7px;
+  padding: 5px;
 }
 .topnav__list {
   list-style: none;
@@ -27,7 +27,7 @@
 .topnav a {
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px 16px;
   text-decoration: none;
 }
 /*Väri kun hiiri päällä */
@@ -100,7 +100,7 @@ td:last-child, th:last-child {
     font-size: 30px;
     border: 7px solid #4800ff;
     position: fixed;
-    top: 7%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
