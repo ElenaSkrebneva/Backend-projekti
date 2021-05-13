@@ -2,15 +2,15 @@
   box-sizing: border-box;
 }
 
-.header {
-    padding: 40px;
-    text-align: center;
-    color: white;
+.background-image {
+    padding: 3px;
+	width: 100%;
+	
 }
 .topnav {
   overflow: hidden;
   background-color: mediumblue;
-  padding: 20px;
+  padding: 7px;
 }
 .topnav__list {
   list-style: none;
