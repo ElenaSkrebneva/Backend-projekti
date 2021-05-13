@@ -52,7 +52,7 @@ article {
 main {
   padding: 8px;
   font-family: Calibri;
-  text-align: center;
+  text-align: left;
   background-color: #002e56;
   font-size: 15px;
   color: white;
@@ -78,6 +78,11 @@ td, th {
   padding: 10px;
   min-width: 50px;
 }
+
+td:first-child, th:first-child {
+  width: 160px;
+}
+
 
 td:last-child, th:last-child {
   border-right: none;
