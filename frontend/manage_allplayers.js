@@ -106,7 +106,7 @@ function addButtons_forAllPlayers(tr, func) {
     btDelete.setAttribute('type', 'button');    // SET INPUT ATTRIBUTE.
     btDelete.setAttribute('value', 'Varaa');
     btDelete.classList.add("reserve_btn");
-    btDelete.setAttribute('style', 'background-color:#ED5650;');
+    btDelete.setAttribute('style', 'background-color: silver;');
     btDelete.setAttribute('onclick', func);   // ADD THE BUTTON's 'onclick' EVENT.
     td.appendChild(btDelete);
     tr.appendChild(td)
