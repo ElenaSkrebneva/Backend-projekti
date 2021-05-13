@@ -6,7 +6,6 @@
     padding: 1px;
 	width: 100%;
 	overflow: hidden;
-	
 }
 .topnav {
   overflow: hidden;
@@ -40,22 +39,29 @@
 body {
   padding: 10px;
   font-family: Calibri;
-  background: #f1f1f1;
+  background: silver;	
 }
 article {
   -webkit-flex: 3;
   -ms-flex: 3;
   flex: 3;
   background-color: rgb(219, 210, 210);
-  padding: 10px;
+  padding: 2px;
 }
 
+main {
+  padding: 8px;
+  font-family: Calibri;
+  text-align: left;
+  background-color: darkblue;
+  color: white;
+}
 
 table {
   border-collapse: collapse;
   width: 100%;
   text-align: center;
-    overflow: hidden;
+  overflow: hidden;
 }
 
 td, th {
@@ -71,13 +77,14 @@ td:last-child, th:last-child {
     box-sizing: border-box;
 }
 .points_together {
-  text-align: center;
+  text-align: right;
+  text-decoration: bold;
 }
 .footer {
-  padding: 20px;
+  padding: 2px;
   text-align: right;
-  background: #ddd;
-  margin-top: 20px;
+  background: f1f1f1;
+  margin-top: 5px;
 }
 @media screen and (max-width: 400px) {
   .topnav  {
@@ -102,7 +109,7 @@ td:last-child, th:last-child {
     font-size: 30px;
     border: 7px solid #4800ff;
     position: fixed;
-    top: 25%;
+    top: 17%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
