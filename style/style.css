@@ -39,7 +39,7 @@
 body {
   padding: 10px;
   font-family: Calibri;
-  background: silver;	
+  background: #081534;	
 }
 article {
   -webkit-flex: 3;
@@ -52,8 +52,9 @@ article {
 main {
   padding: 8px;
   font-family: Calibri;
-  text-align: left;
-  background-color: darkblue;
+  text-align: center;
+  background-color: #002e56;
+  font-size: 15px;
   color: white;
 }
 
@@ -62,11 +63,20 @@ table {
   width: 100%;
   text-align: center;
   overflow: hidden;
+  font-size: 12px;
 }
+table#mygoalkeepers_table{
+  margin-top: 80px;
+  margin-bottom: 50px;
+  padding-left: 0px;
+}
+
+
 
 td, th {
   border-right: 1px dashed blue;
   padding: 10px;
+  min-width: 50px;
 }
 
 td:last-child, th:last-child {
@@ -83,7 +93,7 @@ td:last-child, th:last-child {
 .footer {
   padding: 2px;
   text-align: right;
-  background: f1f1f1;
+  background: #17d4fc;
   margin-top: 5px;
 }
 @media screen and (max-width: 400px) {
@@ -109,7 +119,7 @@ td:last-child, th:last-child {
     font-size: 30px;
     border: 7px solid #4800ff;
     position: fixed;
-    top: 17%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
