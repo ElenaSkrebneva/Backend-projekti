@@ -3,32 +3,48 @@
 }
 
 .background-image {
-    padding: 1px;
 	width: 100%;
 	overflow: hidden;
+}
+.bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    border: 7px solid #4800ff;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 400px;
+    padding: 10px;
+    text-align: center;
 }
 .topnav {
   overflow: hidden;
   background-color: mediumblue;
-  padding: 5px;
+  padding: 3px;
+  
 }
 .topnav__list {
   list-style: none;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
 }
 .topnav__list li {
-  margin: 0;
-  padding: 0;
+  margin: 5;
+  padding: 5;
 }
 .topnav a {
   color: #f2f2f2;
   text-align: center;
-  padding: 10px 40px;
+  padding: 10px 100px;
   text-decoration: none;
+  font-size: 20px;
 }
 /*Väri kun hiiri päällä */
 .topnav a:hover {
@@ -50,11 +66,11 @@ article {
 }
 
 main {
-  padding: 8px;
+  padding: 10px 0px 0px 10px;
   font-family: Calibri;
   text-align: left;
   background-color: #002e56;
-  font-size: 15px;
+  font-size: 18px;
   color: white;
 }
 
@@ -63,14 +79,12 @@ table {
   width: 100%;
   text-align: center;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 14px;
 }
 table#mygoalkeepers_table{
   margin-top: 80px;
   margin-bottom: 50px;
-  padding-left: 0px;
 }
-
 
 
 td, th {
@@ -116,19 +130,4 @@ td:last-child, th:last-child {
     flex-direction: column;
   }
 }
-.bg-text {
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-    color: white;
-    font-weight: bold;
-    font-size: 30px;
-    border: 7px solid #4800ff;
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 400px;
-    padding: 10px;
-    text-align: center;
-}
+
