@@ -5,6 +5,8 @@
 .background-image {
 	width: 100%;
 	overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .bg-text {
     background-color: rgb(0,0,0); /* Fallback color */
@@ -79,7 +81,6 @@ table {
   width: 100%;
   text-align: center;
   margin-bottom: 40px;
-  background-color: #fcfcfc;
   font-size: 14px;
   overflow: hidden;
 }
@@ -103,12 +104,14 @@ td:last-child, th:last-child {
   border-right: none;
 }
 
-* {
-    box-sizing: border-box;
+th {
+  font-size: 18px;
+  background-color: rgba(0,0,0,0.4);
 }
+
 .points_together {
   text-align: right;
-  text-decoration: bold;
+  font-size: 30px;
 }
 .footer {
   padding: 2px;
@@ -121,17 +124,17 @@ td:last-child, th:last-child {
   padding: 5px 15px;
   text-transform: uppercase;
   font-weight: bold;
-  color: #1d3d40;
+  background-color: #1d3d40;
   margin: 10px;
-  background-color: #3ee8ff;
-  border: 2px solid #1d3d40;
+  color: #12fff7;
+  border: 2px solid #3ee8ff;
   border-radius: 20px;
 }
 
 .reserve_btn:hover, .free_btn:hover {
-  color: #3ee8ff;
-  background-color: #1d3d40;
-  border-color: #3ee8ff;
+  background-color: #12fff7;
+  color: #1d3d40;
+  border-color: #12fff7;
 }
 
 .reserve_btn:active, .free_btn:active {
