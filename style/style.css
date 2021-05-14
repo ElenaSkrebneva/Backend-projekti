@@ -5,8 +5,6 @@
 .background-image {
 	width: 100%;
 	overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .bg-text {
     background-color: rgb(0,0,0); /* Fallback color */
@@ -28,7 +26,7 @@
   overflow: hidden;
   background-color: mediumblue;
   padding: 3px;
-
+  
 }
 .topnav__list {
   list-style: none;
@@ -46,7 +44,7 @@
   text-align: center;
   padding: 10px 100px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
 }
 /*Väri kun hiiri päällä */
 .topnav a:hover {
@@ -57,7 +55,7 @@
 body {
   padding: 10px;
   font-family: Calibri;
-  background: #081534;
+  background: #16215B;	
 }
 article {
   -webkit-flex: 3;
@@ -66,12 +64,16 @@ article {
   background-color: rgb(219, 210, 210);
   padding: 2px;
 }
-
+h1 {
+	color: silver;
+	text-align: left;
+	padding-left: 20px;
+}
 main {
   padding: 10px 0px 0px 10px;
   font-family: Calibri;
   text-align: left;
-  background-color: #002e56;
+  background-color: #181242;
   font-size: 18px;
   color: white;
 }
@@ -80,19 +82,19 @@ table {
   border-collapse: collapse;
   width: 100%;
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 14px;
   overflow: hidden;
+  font-size: 14px;
+}
+table#mygoalkeepers_table{
+  margin-top: 80px;
+  margin-bottom: 50px;
 }
 
 
 td, th {
   border-right: 1px dashed blue;
-  padding: 15px;
-  max-width: 150px;
+  padding: 10px;
   min-width: 50px;
-  word-break: break-all;
-  white-space: pre-wrap;
 }
 
 td:first-child, th:first-child {
@@ -104,14 +106,12 @@ td:last-child, th:last-child {
   border-right: none;
 }
 
-th {
-  font-size: 18px;
-  background-color: rgba(0,0,0,0.4);
+* {
+    box-sizing: border-box;
 }
-
 .points_together {
   text-align: right;
-  font-size: 30px;
+  text-decoration: bold;
 }
 .footer {
   padding: 2px;
@@ -119,36 +119,10 @@ th {
   background: #17d4fc;
   margin-top: 5px;
 }
-.reserve_btn, .free_btn {
-  cursor: pointer;
-  padding: 5px 15px;
-  text-transform: uppercase;
-  font-weight: bold;
-  background-color: #1d3d40;
-  margin: 10px;
-  color: #12fff7;
-  border: 2px solid #3ee8ff;
-  border-radius: 20px;
-}
-
-.reserve_btn:hover, .free_btn:hover {
-  background-color: #12fff7;
-  color: #1d3d40;
-  border-color: #12fff7;
-}
-
-.reserve_btn:active, .free_btn:active {
-  opacity: 50%;
-}
-
 @media screen and (max-width: 400px) {
   .topnav  {
     width: 100%;
   }
-}
-.flex-container {
-  display: flex;
-  flex-direction: row;
 }
 
 @media (max-width: 800px) {
@@ -156,3 +130,4 @@ th {
     flex-direction: column;
   }
 }
+
