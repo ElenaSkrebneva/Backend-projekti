@@ -106,8 +106,7 @@ function addButtons_forMyTeam(tr, func) {
     var btDelete = document.createElement('input');
     btDelete.setAttribute('type', 'button');    // SET INPUT ATTRIBUTE.
     btDelete.setAttribute('value', 'Vapauta');
-    btDelete.classList.add("reserve_btn");
-    btDelete.setAttribute('style', 'background-color:#ED5650;');
+    btDelete.classList.add("free_btn");
     btDelete.setAttribute('onclick', func);   // ADD THE BUTTON's 'onclick' EVENT.
     td.appendChild(btDelete);
     tr.appendChild(td)
@@ -212,17 +211,17 @@ function count_points (items) {
   var pisteet = 0;
   for (var i = 0; i < items.length; i++) {
     if (items[i].position === "Goalkeeper") {
-      pisteet += items[i].maalit
-      pisteet += items[i].syotot
-      pisteet += items[i].torjunnat
-      pisteet += items[i].paastetyt_maalit
+      pisteet += items[i].maalit*25
+      pisteet += items[i].syotot*12
+      pisteet += items[i].torjunnat*0.3
+      pisteet += items[i].paastetyt_maalit*(-1)
     }
     else {
-      pisteet += items[i].maalit
-      pisteet += items[i].syotot
-      pisteet += items[i].laukaukset
-      pisteet += items[i].blokkaukset
-      pisteet += items[i].taklaukset
+      pisteet += items[i].maalit*6
+      pisteet += items[i].syotot*4
+      pisteet += items[i].laukaukset*0.25
+      pisteet += items[i].blokkaukset*0.5
+      pisteet += items[i].taklaukset*0.5
       pisteet += items[i].tehotilasto
     }
   }

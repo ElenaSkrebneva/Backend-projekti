@@ -54,11 +54,16 @@ table {
   border-collapse: collapse;
   width: 100%;
   text-align: center;
+  margin-bottom: 40px;
+  background-color: #fcfcfc;
 }
 
 td, th {
   border-right: 1px dashed blue;
   padding: 15px;
+  max-width: 150px;
+  word-break: break-all;
+  white-space: pre-wrap;
 }
 
 td:last-child, th:last-child {
@@ -77,6 +82,28 @@ td:last-child, th:last-child {
   background: #ddd;
   margin-top: 20px;
 }
+.reserve_btn, .free_btn {
+  cursor: pointer;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #1d3d40;
+  margin: 10px;
+  background-color: #3ee8ff;
+  border: 2px solid #1d3d40;
+  border-radius: 20px;
+}
+
+.reserve_btn:hover, .free_btn:hover {
+  color: #3ee8ff;
+  background-color: #1d3d40;
+  border-color: #3ee8ff;
+}
+
+.reserve_btn:active, .free_btn:active {
+  opacity: 50%;
+}
+
 @media screen and (max-width: 400px) {
   .topnav  {
     width: 100%;

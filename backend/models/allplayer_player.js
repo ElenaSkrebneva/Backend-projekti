@@ -128,10 +128,10 @@ var docs = [
     "first_name": "Milla",
     "last_name": "Magia",
     "position": "Goalkeeper",
-    "syotot": 0,
+    "syotot": 1,
     "maalit": 0,
     "torjunnat": 30,
-    "paastetyt_maalit": -1,
+    "paastetyt_maalit": 1,
   },
   {
     "player_number": 12,
@@ -139,12 +139,12 @@ var docs = [
     "last_name": "Pennonen",
     "position": "Goalkeeper",
     "torjunnat": 20,
-    "paastetyt_maalit": -5,
+    "paastetyt_maalit": 5,
     "syotot": 1,
     "maalit": 0
   }
 ];
-/*
+
 // Jos tarvii lisätä pelaajat, tämä lisää kaikki kokoelmaan "allplayers" "project2" tietokantaan. Tätä tiedostoa ei tarvi käynnistää erikseen. Avaat kommennon ja app.js vain pyörimään
 docs.forEach(doc => {
   Allplayer_model.create(doc, (err, new_instance) => {
@@ -152,5 +152,5 @@ docs.forEach(doc => {
     else {console.log(new_instance)}
   })
 })
-*/
+
 module.exports = Allplayer_model
