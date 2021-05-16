@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Lätkä projekti</title>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="normalize.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="changeTag.js"></script>
+      <script src="manage_allplayers.js"></script>
+      <script src="manage_myteam.js"></script>
+     <div class="header">
+            <div class="bg-text">LÄTKÄLIIGAPELI</div>
+	  <div class="background-image">
+		<img src="hockey.jpg" alt="hockey">
+	  </div>
+	 </div> 
+  </head>
+  <body>
+    <main>
+      <nav class="topnav">
+        <ul class="topnav__list">
+              <li>
+                <a href="/#/myteam"><i class="fa fa-fw fa-home"></i>Minun joukkue</a>
+            </li>
+            <li>
+                <a href="/#/allplayers"><i class="fa fa-fw fa-user"></i>Kaikki pelaajat</a>
+            </li>
+            <li>
+              <a href="https://www.liigaporssi.fi/"><i class="fa fa-fw fa-search"></i>Liveseuranta Liigapörssi</a>
+            </li>
+        </ul>
+      </nav>
+      <h1></h1>
+      <div id="container"></div>
+      <div id="container2"></div>
+      <div id="points_together"></div>
+      <div id="errors"></div>
+    </main>
+    <footer class="footer">
+      <p id="demo"></p>
+    </footer>
+    <script>
+      var d = new Date();
+      document.getElementById("demo").innerHTML = d;
+    </script>
+  </body>
+</html>
